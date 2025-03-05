@@ -10,6 +10,5 @@ public class ApiRestApplication {
         SpringApplication.run(ApiRestApplication.class, args);
     }
 
-    // Configuração global de CORS
     
 }
