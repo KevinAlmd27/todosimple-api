@@ -27,20 +27,20 @@ public class Task {
 	@JoinColumn(name = "user_id", nullable = false, updatable = false)
 	private User user;
 
-	@Column(name = "descricao", length = 255, nullable = false)
+	@Column(name = "description", length = 255, nullable = false)
 	@NotEmpty
 	@NotNull
 	@Size(min = 1, max = 255)
-	private String descricao;
+	private String description;
 
 	public Task() {
 	}
 
-	public Task(Long id, User user, String descricao) {
+	public Task(Long id, User user, String description) {
 		super();
 		this.id = id;
 		this.user = user;
-		this.descricao = descricao;
+		this.description = description;
 	}
 
 	public Long getId() {
@@ -60,11 +60,11 @@ public class Task {
 	}
 
 	public String getDescricao() {
-		return descricao;
+		return description;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescricao(String description) {
+		this.description = description;
 	}
 
 	@Override
@@ -89,7 +89,7 @@ public class Task {
 				return false;
 			else if(!this.id.equals(other.id))
 				return false;
-		return Objects.equals(descricao, other.descricao) && Objects.equals(id, other.id)
+		return Objects.equals(description, other.description) && Objects.equals(id, other.id)
 				&& Objects.equals(user, other.user);
 	}
 
